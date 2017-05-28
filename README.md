@@ -38,3 +38,5 @@ Then in your Sequelize initialization:
 
 This will generate the model attributes defined in the [sequelize docs](http://docs.sequelizejs.com/manual/tutorial/models-definition.html).
 
+This means you do not have to write separately the fields in the model configuration that are already specified in your model class. Writing the same thing in two places means a human has to validate something that should be the job of the compiler.
+
