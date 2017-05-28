@@ -2,6 +2,10 @@
 
 Macros utilities for making it easier/faster when working with npm libraries, such as [sequelize](http://docs.sequelizejs.com/).
 
+NPM modules supported so far:
+
+ - [sequelize](http://docs.sequelizejs.com/)
+
 Haxe macros are particularly useful in generating boilerplate code from other code or configuration, allowing compiler type checking, and ensuring correct arguments in an otherwise runtime-only checked language (Javascript).
 
 ## [Sequelize](http://docs.sequelizejs.com/)
