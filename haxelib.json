@@ -1,0 +1,11 @@
+{
+  "name": "haxe-js-extern-macros",
+  "url" : "https://github.com/dionjwa/haxe-js-extern-macros",
+  "license": "MIT",
+  "tags": ["macro", "js", "extern", "externs", "npm", "node.js", "node"],
+  "classPath": "src",
+  "description": "Macros for working with npm libraries/externs",
+  "version": "0.0.1",
+  "releasenote": "Minor",
+  "contributors": ["dionjwa"]
+}
