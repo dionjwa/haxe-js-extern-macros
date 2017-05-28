@@ -1,10 +1,12 @@
-# haxe-js-extern-macros
+# Haxe macros for working with JS npm externs
 
-Macros utilities for making it easier/faster when working with npm libraries.
+Macros utilities for making it easier/faster when working with npm libraries, such as [sequelize](http://docs.sequelizejs.com/).
+
+Haxe macros are particularly useful in generating boilerplate code from other code or configuration, allowing compiler type checking, and ensuring correct arguments in an otherwise runtime-only checked language (Javascript).
 
 ## [Sequelize](http://docs.sequelizejs.com/)
 
-Generate the attributes for your models
+Generate the attributes for your models, so you can keep model variables type checked.
 
 MyModel.hx:
 
