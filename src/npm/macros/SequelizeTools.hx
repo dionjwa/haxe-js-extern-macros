@@ -5,6 +5,9 @@ import haxe.DynamicAccess;
 import npm.sequelize.ColumnOptions;
 import npm.Sequelize;
 
+using Lambda;
+using StringTools;
+
 class SequelizeTools
 {
 	/**

@@ -32,7 +32,7 @@ class SequelizeMacros
 	{
 		var pos = haxe.macro.Context.currentPos();
 
-		var className = MacroUtil.getClassNameFromClassExpr(classExpr);
+		var className = util.macros.MacroUtil.getClassNameFromClassExpr(classExpr);
 
 		var rpcType = haxe.macro.Context.getType(className);
 		var fields = [];
