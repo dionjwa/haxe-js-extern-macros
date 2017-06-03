@@ -24,6 +24,9 @@ class SequelizeTools
 			var colOpts = Reflect.field(obj, key);
 			var typeString :String = untyped colOpts.type;
 			var type = typeString.replace('()', '').replace(';', '').split('.').pop();
+			if (Reflect.field(sql, type) == null) {
+				throw 'Failed to get Sequelize type: "${type}"';
+			}
 			colOpts.type = Reflect.callMethod(sql, Reflect.field(sql, type), []);
 		});
 		return cast obj;
