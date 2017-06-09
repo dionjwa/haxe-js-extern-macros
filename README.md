@@ -25,10 +25,15 @@ MyModel.hx:
 	{
 		@db({allowNull: false, primaryKey: true})
 		var id :String;
+
 		@db({allowNull: false})
 		var name :String;
-		@db({type:'npm.Sequelize.JSONB'})
+
+		@db({type:'JSONB'})
 		var blob :SomeTypeDef;
+
+		@db({type:'STRING(20)'})
+		var customString :String;
 	}
 
 

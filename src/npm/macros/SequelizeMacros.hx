@@ -65,7 +65,18 @@ class SequelizeMacros
 												}
 											default: trace(metaObjectField.expr.expr);
 										}
-									} else {
+									} else if (metaObjectField.field == 'defaultValue') {
+										switch(metaObjectField.expr.expr) {
+											case EConst(c):
+												switch(c) {
+													case CString(v):
+														fieldParams['defaultValue'] = $e{v};
+													default:
+														Context.error('The "defaultValue" value must be a string that will become a code expression', pos);
+												}
+											default: trace(metaObjectField.expr.expr);
+										}
+									} else  {
 										switch(metaObjectField.expr.expr) {
 											case EConst(c):
 												switch(c) {
