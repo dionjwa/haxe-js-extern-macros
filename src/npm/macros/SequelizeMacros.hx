@@ -80,17 +80,23 @@ class SequelizeMacros
 										switch(metaObjectField.expr.expr) {
 											case EConst(c):
 												switch(c) {
-													case CInt(v),CFloat(v),CString(v),CIdent(v): fieldParams[metaObjectField.field] = v;
+													case CInt(v): fieldParams[metaObjectField.field] = Std.parseInt('$v');
+													case CFloat(v): fieldParams[metaObjectField.field] = Std.parseFloat('$v');
+													case CString(v): fieldParams[metaObjectField.field] = '$v';
+													case CIdent(v): fieldParams[metaObjectField.field] = '$v' == 'true' ? true : false;
 													default: Context.error('@db{ ${metaObjectField.field}:?} is not not one of [Int|Float|String|Bool], not sure what it should be', pos);
 												}
 											case EArrayDecl(a):
-												var newArr = [];
+												var newArr :Array<Dynamic> = [];
 												fieldParams[metaObjectField.field] = newArr;
 												for (e in a) {
 													switch(e.expr) {
 														case EConst(c):
 															switch(c) {
-																case CInt(v),CFloat(v),CString(v),CIdent(v): newArr.push(v);
+																case CInt(v): newArr.push(Std.parseInt('$v'));
+																case CFloat(v): newArr.push(Std.parseFloat('$v'));
+																case CString(v): newArr.push('$v');
+																case CIdent(v): newArr.push('$v' == 'true' ? true : false);
 																default: Context.error('@db{ ${metaObjectField.field}:[${c}]} is not one of [Int|Float|String|Bool], not sure what it should be', pos);
 															}
 														default: Context.error('@db{ ${metaObjectField.field}:?} is not one of [Int|Float|String|Bool], not sure what it should be', pos);
